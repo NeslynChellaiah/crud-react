@@ -81,9 +81,19 @@ function App() {
 
   return (
     <div className="App">
+      {!users.length && (
+        <Typography
+          id="modal-modal-title"
+          variant="h6"
+          component="h2"
+          style={{ display: "flex", justifyContent: "center" }}
+        >
+          Click the plus icon to add users
+        </Typography>
+      )}
       <Grid container spacing={2}>
         {users?.map(({ name, email, imgSrc }) => (
-          <Grid item xs={6} sm={4} md={3}>
+          <Grid item xs={6} sm={4} md={3} key={email + "grid"}>
             <UserCard
               key={email}
               name={name}
