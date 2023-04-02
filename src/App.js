@@ -155,14 +155,16 @@ function App() {
             <Button type="submit" variant="contained" sx={{ mt: 2 }}>
               {!editMode() ? "Add User" : "Update User"}
             </Button>
-            <Button
-              onClick={deleteUser}
-              type="button"
-              variant="outlined"
-              sx={{ mt: 2, ml: 2 }}
-            >
-              Delete user
-            </Button>
+            {editMode() && (
+              <Button
+                onClick={deleteUser}
+                type="button"
+                variant="outlined"
+                sx={{ mt: 2, ml: 2 }}
+              >
+                Delete user
+              </Button>
+            )}
           </form>
         </Box>
       </Modal>
